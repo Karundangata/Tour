@@ -1,0 +1,103 @@
+#### Register User
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "Name": "Karunda Ngata",
+  "Email": "karunda.boniface20@students.dkut.ac.ke",
+  "Password": "Bonny@12",
+  "isAdmin": 0
+}
+
+#### Login User
+POST http://localhost:3000/auth/login/
+Content-Type: application/json
+
+{
+  "email": "karunda.boniface20@students.dkut.ac.ke",
+  "password": "Bonny@12"
+}
+
+#### Get All Users
+GET http://localhost:3000/auth/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+
+### Add Tour
+POST http://localhost:3000/tours
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+Content-Type: application/json
+ 
+{
+  "name": "San Francisco Tour",
+  "description": "Tour the California",
+  "price": 30000,
+  "duration": 6
+}
+
+### Get All Tours
+GET http://localhost:3000/tours
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+ 
+
+### Add Hotel
+ POST http://localhost:3000/hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+Content-Type: application/json
+ 
+{
+  "name": "Golden Gate Bridge",
+  "location": "San Francisco",
+  "price": 45000
+}
+
+### Get All Hotels
+GET http://localhost:3000/hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+
+### Update Hotel
+PUT http://localhost:3000/hotels/b72050aa-08f9-4fc7-b779-b044d90c3a4c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+Content-Type: application/json
+ 
+{
+  "name": "Nyari Beach Updated",
+  "location": "Nyari Updated",
+  "price": 1200.45
+}
+
+### Delete Hotel
+DELETE http://localhost:3000/hotels/3c8cd1b3-5563-42b9-a507-73391dcf3d23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+
+### Add Booking
+POST http://localhost:3000/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+Content-Type: application/json
+ 
+{
+  "userId": "0d926390-32d6-4fa4-87cd-216c571f41bb",
+  "tourId": "57a1869f-9c2a-49fa-ba1a-b5b087b69dbb",
+  "hotelId": "f0ac8931-281e-43ef-8a10-6903f31f444c"
+}
+
+### Get All Bookings
+GET http://localhost:3000/bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+
+
+### Get Booking By ID
+GET http://localhost:3000/bookings/93f99006-e5dc-4d9e-89b9-c98a3bef3fa1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+
+### Update Booking
+PUT http://localhost:3000/bookings/93f99006-e5dc-4d9e-89b9-c98a3bef3fa1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
+Content-Type: application/json
+ 
+{
+  "status": "confirmed"
+}
+
+### Cancel Booking
+DELETE http://localhost:3000/bookings/93f99006-e5dc-4d9e-89b9-c98a3bef3fa1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjoxLCJpYXQiOjE3MTg2MzA5OTB9.H6125L-8Ez_RWK9UbMMSJRGzkCMwkgynbr0-rvOMmHs
